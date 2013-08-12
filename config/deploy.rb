@@ -18,7 +18,7 @@ namespace :deploy do
   task :stop do
     sudo "service nginx stop"
     sudo "service postgresql stop"
-    run "kill `cat /tmp/unicorn.smallcms.pid`"
+    run "kill `cat /tmp/unicorn_smallcms.pid`"
   end
 
   task :restart do
