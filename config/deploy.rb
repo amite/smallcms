@@ -1,4 +1,4 @@
-set :application, "rails3demo"
+set :application, "smallcms"
 set :repository,  "git@github.com:amite/smallcms.git"
 set :user, "vagrant"
 set :deploy_to, "/home/vagrant/apps/smallcms"
@@ -6,7 +6,6 @@ set :use_sudo, false
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :unicorn_pid, "unicorn_smallcms.pid"
 
 server "192.168.1.9", :app, :web, :db, primary: true
 
@@ -19,7 +18,7 @@ namespace :deploy do
   task :stop do
     sudo "service nginx stop"
     sudo "service postgresql stop"
-    run "kill `cat /tmp/smallcms.pid`"
+    run "kill `cat /tmp/pids/unicorn.pid`"
   end
 
   task :restart do
