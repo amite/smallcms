@@ -7,7 +7,7 @@ set :use_sudo, false
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-server "192.168.1.9", :app, :web, :db, primary: true
+server "192.168.1.8", :app, :web, :db, primary: true
 
 namespace :deploy do
   task :start do
