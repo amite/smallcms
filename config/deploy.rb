@@ -22,7 +22,7 @@ namespace :deploy do
   task :stop do
     sudo "service nginx stop"
     sudo "service postgresql stop"
-    run "kill `cat /tmp/pids/unicorn.pid`"
+    run "kill `cat /tmp/unicorn.pid`"
   end
 
   task :restart do
