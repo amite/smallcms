@@ -1,5 +1,5 @@
 set :application, "rails3demo"
-set :repository,  "git@github.com:amite/rails3demo.git"
+set :repository,  "git@github.com:amite/smallcms.git"
 set :user, "vagrant"
 set :deploy_to, "/home/vagrant/apps/smallcms"
 set :use_sudo, false
@@ -18,7 +18,7 @@ namespace :deploy do
   task :stop do
     sudo "service nginx stop"
     sudo "service postgresql stop"
-    run "kill `cat /tmp/unicorn_rails3demo.pid`"
+    run "kill `cat /tmp/smallcms.pid`"
   end
 
   task :restart do
