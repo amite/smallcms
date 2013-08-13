@@ -6,7 +6,7 @@ set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 set :ssh_options,     { forward_agent: true }
-set :branch,          "origin/master"
+set :branch,          "master"
 set :deploy_via, :remote_cache
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
