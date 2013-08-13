@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 set :application, "smallcms"
 set :repository,  "git@github.com:amite/#{application}.git"
-set :user, "deploy"
+set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 set :ssh_options,     { forward_agent: true }
