@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 set :application, "smallcms"
 set :repository,  "git@github.com:amite/#{application}.git"
-set :user, "vagrant"
+set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 
@@ -22,7 +22,7 @@ namespace :deploy do
   task :stop do
     sudo "service nginx stop"
     sudo "service postgresql stop"
-    run "kill `cat /tmp/unicorn.pid`"
+    run "kill -s USR2 `cat /tmp/unicorn.pid`"
   end
 
   task :restart do
