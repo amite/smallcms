@@ -14,7 +14,7 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 
 default_environment["RAILS_ENV"] = 'production'
 
-server "192.168.1.9", :app, :web, :db, primary: true
+server "37.139.20.55", :app, :web, :db, primary: true
 
 default_run_options[:pty] = true
 
